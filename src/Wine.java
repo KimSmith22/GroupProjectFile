@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 
-public class TestArray {
+
+
+public class Wine {
 	
 	ArrayList<Wine> winelist = new ArrayList<Wine>();
 	
@@ -27,4 +29,11 @@ public class TestArray {
 	}
 
 	}
+
+public static void add(Wine winelist) {
+	// TODO Auto-generated method stub
+	
+}
+
+
 }
