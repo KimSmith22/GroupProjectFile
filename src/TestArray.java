@@ -16,5 +16,13 @@ public class TestArray {
 	Winelist.add(new Wine(“Standing Stone”, “Riesling”, 11.99));
 	Winelist.add(new Wine(“Bex”, “Riesling”, 10.99));
 
+	//If we want to display the arraylist
+	Public void display (ArrayList <Wine>displayit){
+	for (int i=0; i<=displayit.size();i++){
+	System.out.println (displayit.get(i));
 
+
+	}
+
+	}
 }
