@@ -16,6 +16,7 @@ public class POSTerminalApp {
 	 */
 	public static void main(String[] args) {
 		//variables
+		String choice = "y";
 		
 		//welcome and prompts
 		System.out.println("Welcome to our Wine Shop!");
@@ -62,13 +63,25 @@ public class POSTerminalApp {
 					break;
 				case 4:
 					System.out.println("moscado list");
-					break;
-					
-			System.out.println();//blank line for visual
-					
-					
+					break;					
 			}//end type switch
-		}//end view switch
+		}//end view switch	
+	do{
+		System.out.println();//blank line for visual
+		System.out.println("Enter wine name:  ");
+		k.nextLine();
+		String name = k.nextLine();
+		
+		System.out.println("Enter quantity:  ");
+		int quantity = k.nextInt();
+		
+		System.out.println("Another line item? (y/n)");
+		k.nextLine();
+		choice = k.nextLine();
+	}while(choice.equalsIgnoreCase("y"));
+	
+	System.out.println("Description:");
+		
 	}//psmv
 
 }//end class
