@@ -1,43 +1,34 @@
 public class ProductManager {
 	private String name; 
 	private String type; 
-	private String description; 
 	private double price; 
 	private static double tax = 6.00;
 	
 	//constructor 
-	public Product(String name, String category, String description, double price){
+	public Product(String name, String type, double price){
 		this.name = name;
 		this.type = category;
-		this.description = description;
 		this.price = price;
 	}
 	
-	public Product(String name, String category, String description, String price){
+	public Product(String name, String type, String price){
 		this.name = name;
 		this.type = category;
-		this.description = description;
 		this.price = Double.parseDouble(price);
 		}
 	
 	public Product(){
 		this.name = null;
 		this.type = null;
-		this.description = null;
 		this.price = 0;
 	}
-	
 	
 	public String getName() {
 		return name;
 	}
 
-	public String getCategory() {
+	public String getType() {
 		return type;
-	}
-
-	public String getDescription() {
-		return description;
 	}
 	
 	public double getPrice() {
@@ -52,14 +43,10 @@ public class ProductManager {
 		this.name = name;
 	}
 
-	public void setCategory(String category) {
+	public void setType(String type) {
 		this.type = type;
 	}
 	
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
 	public void setPrice(double price) {
 		this.price = price;
 	}
@@ -69,6 +56,6 @@ public class ProductManager {
 	}
 	
 	public String toString() {
-		return name + "(" + type + ")" + description + price;
+		return name + "(" + type + ")" + price;
 	}
 }
