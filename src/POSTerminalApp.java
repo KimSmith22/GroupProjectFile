@@ -15,10 +15,7 @@ public class POSTerminalApp {
 	 */
 	public static void main(String[] args) {
 		//variables
-		int i;
-		int name = 0;
-		int type = 0;
-		int price = 0;
+		String choice = "y";
 		
 		//welcome and prompts
 		System.out.println("Welcome to our Wine Shop!");
@@ -34,7 +31,7 @@ public class POSTerminalApp {
 			break;
 		case 2:
 			System.out.println("Select 1 for Pino Noir, 2 for Merlot, 3 for Reisling, and 4 for Moscado");
-			 type = k.nextInt();
+			int type = k.nextInt();
 				switch(type){
 				case 1:
 					System.out.println("pino noir list");
@@ -50,20 +47,21 @@ public class POSTerminalApp {
 					break;					
 			}//end type switch
 		}//end view switch	
-		
+	do{
 		System.out.println();//blank line for visual
-		System.out.println("How many bottles would you like to order?:  ");
-		int bottles = k.nextInt();
+		System.out.println("Enter wine name:  ");
+		k.nextLine();
+		String name = k.nextLine();
 		
-		int[][][] wine = new int[name][type][price];
-		int x = 0;
-		double sum = 0.00;
-		for(i = 0; i <= wine.length - 1; i++){//begin for loop to place order
-			sum = x +1;
-		}//sets number of times to prompt order
-		System.out.println("Enter bottle " + (i +1)+ ":  ");
+		System.out.println("Enter quantity:  ");
+		int quantity = k.nextInt();
 		
-		
+		System.out.println("Another line item? (y/n)");
+		k.nextLine();
+		choice = k.nextLine();
+	}while(choice.equalsIgnoreCase("y"));
+	
+	System.out.println("Description:");
 		
 	}//psmv
 
