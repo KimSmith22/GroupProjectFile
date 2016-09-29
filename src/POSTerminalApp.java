@@ -16,6 +16,7 @@ public class POSTerminalApp {
 	public static void main(String[] args) {
 		//variables
 		String choice = "y";
+		double total = 0.00;
 		
 		//welcome and prompts
 		System.out.println("Welcome to our Wine Shop!");
@@ -30,11 +31,11 @@ public class POSTerminalApp {
 			System.out.println("inventory list");
 			break;
 		case 2:
-			System.out.println("Select 1 for Pino Noir, 2 for Merlot, 3 for Reisling, and 4 for Moscado");
+			System.out.println("Select:\n1 for Pinot Noir\n2 for Merlot\n3 for Reisling\n4 for Moscato");
 			int type = k.nextInt();
 				switch(type){
 				case 1:
-					System.out.println("pino noir list");
+					System.out.println("pinot noir list");
 					break;
 				case 2:
 					System.out.println("merlot list");
@@ -43,7 +44,7 @@ public class POSTerminalApp {
 					System.out.println("reisling list");
 					break;
 				case 4:
-					System.out.println("moscado list");
+					System.out.println("moscato list");
 					break;					
 			}//end type switch
 		}//end view switch	
@@ -61,8 +62,10 @@ public class POSTerminalApp {
 		choice = k.nextLine();
 	}while(choice.equalsIgnoreCase("y"));
 	
-	System.out.println("Description:");
-		
+	System.out.println("Description\t\t\tPrice\t\tQty\t\tTotal");
+	
+	System.out.println();
+	System.out.println("Invoice total:  $" + total);
 	}//psmv
 
 }//end class
