@@ -6,18 +6,10 @@ import java.util.Scanner;
 
 public class Payment {
 
-	private double cashPaid;
-	private double subTotal;
 	private double salesTax = 6.00;
 	private double grandTotal;
-	private static double check;
-	private static double cardNumber;
-	private String name;
-	private String category;
-	private String description;
-	private double price;
-	private double tax = 0.06;
-	private double change;
+	
+	
 	double finalFinalTotal = 0;
 	Scanner scan = new Scanner(System.in);
 
@@ -98,4 +90,4 @@ public class Payment {
 		DecimalFormat df2 = new DecimalFormat("###.##");
 		return Double.valueOf(df2.format(val));
 	}
-}
+}`
