@@ -26,25 +26,7 @@ public class POSTerminalApp {
 		System.out.println("Press 1 to view entire inventory or 2 to view by category");
 		Scanner k = new Scanner(System.in);
 		int view = k.nextInt();
-		
-	
-		ArrayList<Wine> winelist = new ArrayList<Wine>();
-		
-		Winelist.add(new Wine(“Villa Alena”, “Moscato”, 6.99));
-		Winelist.add(new Wine(“Beviano”, “Mascato”, 9.99));
-		Winelist.add(new Wine(“Flip Flop”,  “Mascato”, 10.00));
-		Winelist.add(new Wine(“Columbia Valley”, ”Merlot”, 12.00));
-		Winelist.add(new Wine(“North Coast”, “Merlot”, 9.99));
-		Winelist.add(new Wine(“Mark West”, “ Pinot Noir”, 11.00));
-		Winelist.add(new Wine(“DeLoach”, “Pinot Noir”, 18.99));
-		Winelist.add(new Wine(“Castle Rock”, ”Pinot Noir”, 8.99));
-		Winelist.add(new Wine(“Murphy’s Law”, “Riesling”, 12.99));
-		Winelist.add(new Wine(“Washington Hills”, “Riesling”, 10.00));
-		Winelist.add(new Wine(“Standing Stone”, “Riesling”, 11.99));
-		Winelist.add(new Wine(“Bex”, “Riesling”, 10.99));
-
-
-		
+			
 		switch(view){//view inventory switch
 		case 1:
 			System.out.println("inventory list");
@@ -84,7 +66,7 @@ public class POSTerminalApp {
 	System.out.println("Description\t\t\tPrice\t\tQty\t\tTotal");
 	
 	System.out.println();
-	System.out.println("Invoice total:  $" + total);
+	System.out.format("Invoice total:  $" + total);
 	}//psmv
 
 }//end class
