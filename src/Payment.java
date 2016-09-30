@@ -60,14 +60,14 @@ public class Payment {
 		while (validCC == false) {
 			System.out.println(prompt);
 			String ccNumber = sc.next();
-			if (ccNumber.length() < 16 || ccNumber.length() > 16) {
+			if (ccNumber.length() < 15 || ccNumber.length() > 16) {
 				System.out.println("Insufficient digits. Please make sure you enter the entire number");
 				continue;
 			} else {
 				System.out.println("The card number you entered is " + ccNumber);
 				validCC = true;
 			}
-			System.out.println("Please enter date of expiration (mm/dd/yyyy) ");
+			System.out.println("Please enter date of expiration (mm/yyyy) ");
 			
 			boolean validDate = false;
 			while (validDate == false) {
