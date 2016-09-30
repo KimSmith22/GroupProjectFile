@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
@@ -11,7 +12,9 @@ public class WineGui extends JFrame implements ActionListener {
 JButton b1;
 JButton b2;
 public WineGui(){
-	super("Welcome to the Wine Shop!");
+	super();	
+	JOptionPane.showMessageDialog(null,"Please make a selection","Welcome to the Wine Shop!", JOptionPane.PLAIN_MESSAGE);
+
 	setSize(600, 400);
 	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	setLookAndFeel();
@@ -45,9 +48,10 @@ try{
 }
 public static void main(String[]arguments){
 	WineGui frame = new WineGui();
+    }
 }
 
 
 	
 
-}
+
