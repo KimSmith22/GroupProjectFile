@@ -22,7 +22,12 @@ public class POSTerminalApp {
 		Wine wine = new Wine();
 		// variables
 		String choice = "y";
-		double total = 0.00;
+		double price = 0.00;
+		String description;
+		double total = 0;
+		double grandTotal = total + (total * .06);
+		
+		
 		
 		
 		//welcome and prompts
@@ -101,7 +106,45 @@ ArrayList<Wine> winelist = new ArrayList<Wine>();
 		System.out.println("Enter quantity:  ");
 		int quantity = k.nextInt();
 		
+		if(name.equalsIgnoreCase("villa alena")){
+			price = 6.99;
+			description = "Moscado";
+		}else if(name.equalsIgnoreCase("beviano")){
+			price = 9.99;
+			description = "Moscado";
+		}else if(name.equalsIgnoreCase("flip flop")){
+			price = 9.99;
+			description = "Moscado";
+		}else if(name.equalsIgnoreCase("columbia valley")){
+			price = 11.99;
+			description = "Merlot";
+		}else if(name.equalsIgnoreCase("north coast")){
+			price = 17.99;
+			description = "Merlot";
+		}else if(name.equalsIgnoreCase("mark west")){
+			price = 10.99;
+			description = "Pinot Noir";
+		}else if(name.equalsIgnoreCase("deloach")){
+			price = 8.99;
+			description = "Pinot Noir";
+		}else if(name.equalsIgnoreCase("castle rock")){
+			price = 12.99;
+			description = "Pinot Noir";
+		}else if(name.equalsIgnoreCase("murphy's law")){
+			price = 11.99;
+			description = "Reisling";
+		}else if(name.equalsIgnoreCase("washington hills")){
+			price = 7.99;
+			description = "Reisling";
+		}else if(name.equalsIgnoreCase("standing stone")){
+			price = 6.99;
+			description = "Reisling";
+		}else if(name.equalsIgnoreCase("bex")){
+			price = 5.99;
+			description = "Reisling";
+		}
 		
+		 total +=price * quantity;
 		System.out.println("Another line item? (y/n)");
 		k.nextLine();
 		choice = k.nextLine();
@@ -110,7 +153,20 @@ ArrayList<Wine> winelist = new ArrayList<Wine>();
 	System.out.println("Description\t\t\tPrice\t\tQty\t\tTotal");
 	
 	System.out.println();
-	System.out.format("Invoice total:  $" + total );
+	System.out.println("Sub-total:  $" + total );
+	System.out.println("Sales tax:  $" + total * .06);
+	System.out.println("Order total:  $" + grandTotal);
+	
+	System.out.println("Select Payment Method:  1 for cash, 2 for check, or 3 for charge");
+	int payment = k.nextInt();
+	
+	switch(payment){
+	case 1:
+		System.out.println("Enter amount tendered:  ");
+		int tendered = k.nextInt();
+		System.out.println("Your change is:  $" + (payment - grandTotal));
+	}
+	
 	}//psmv
 
 
