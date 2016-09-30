@@ -22,29 +22,26 @@ public class POSTerminalApp {
 		Wine wine = new Wine();
 		// variables
 		String choice = "y";
-
 		double total = 0.00;
+		
 		
 		//welcome and prompts
 
 ArrayList<Wine> winelist = new ArrayList<Wine>();
 	
-	winelist.add(new Wine("Villa Alena", "Moscato", 6.99));
-	winelist.add(new Wine("Beviano", "Mascato", 9.99));
-	winelist.add(new Wine("Flip Flop",  "Mascato", 10.00));
-	winelist.add(new Wine("Columbia Valley", "Merlot", 12.00));
-	winelist.add(new Wine("North Coast", "Merlot", 18.00));
-	winelist.add(new Wine("Mark West", "Pinot Noir", 11.00));
-	winelist.add(new Wine("DeLoach", "Pinot Noir", 8.99));
-	winelist.add(new Wine("Castle Rock", "Pinot Noir", 12.99));
-	winelist.add(new Wine("Murphy’s Law", "Riesling", 11.99));
-	winelist.add(new Wine("Washington Hills", "Riesling", 7.99));
-	winelist.add(new Wine("Standing Stone", "Riesling", 6.99));
-	winelist.add(new Wine("Bex", "Riesling", 5.99));
-	System.out.printf("Wine Name\t Type \t Price\n");
-	for (Wine x: winelist) {				
-						System.out.println(x);
-	}		
+	winelist.add(new Wine("Villa Alena\t\t\t", "Moscato\t\t\t", 6.99));
+	winelist.add(new Wine("Beviano\t\t\t", "Moscato\t\t\t", 9.99));
+	winelist.add(new Wine("Flip Flop\t\t\t",  "Moscato\t\t\t", 10.00));
+	winelist.add(new Wine("Columbia Valley\t", "Merlot\t\t\t\t", 12.00));
+	winelist.add(new Wine("North Coast\t\t", "Merlot\t\t\t\t", 18.00));
+	winelist.add(new Wine("Mark West\t\t", "Pinot Noir", 11.00));
+	winelist.add(new Wine("DeLoach\t\t\t", "Pinot Noir", 8.99));
+	winelist.add(new Wine("Castle Rock\t\t", "Pinot Noir", 12.99));
+	winelist.add(new Wine("Murphy’s Law\t\t", "Riesling", 11.99));
+	winelist.add(new Wine("Washington Hills\t", "Riesling", 7.99));
+	winelist.add(new Wine("Standing Stone\t", "Riesling", 6.99));
+	winelist.add(new Wine("Bex\t\t\t\t", "Riesling", 5.99));
+			
 				/*	
 				List<Double> Price= new ArrayList<Double>();
  Price.add(6.99);
@@ -63,9 +60,6 @@ ArrayList<Wine> winelist = new ArrayList<Wine>();
 		// welcome and prompts
 
 		System.out.println("Welcome to our Wine Shop!");
-		Invoice invoice = new Invoice();
-		getLineItems(invoice;)
-		displayInvoice(invoice);
 		System.out.println();
 
 		System.out.println("Press 1 to view entire inventory or 2 to view by category");
@@ -75,7 +69,10 @@ ArrayList<Wine> winelist = new ArrayList<Wine>();
 		switch(view){//view inventory switch
 
 		case 1:
-			System.out.println("inventory list");
+			System.out.printf("Wine Name\t\t\t Type \t\t\t Price\n");
+	for (Wine x: winelist) {				
+						System.out.println(x);
+	}
 			break;
 		case 2:
 			System.out.println("Select:\n1 for Pinot Noir\n2 for Merlot\n3 for Reisling\n4 for Moscato");
@@ -104,8 +101,6 @@ ArrayList<Wine> winelist = new ArrayList<Wine>();
 		System.out.println("Enter quantity:  ");
 		int quantity = k.nextInt();
 		
-		Product product = wine[].getProduct(product code);
-		invoice.addItem(new LineItem(product, quantity));
 		
 		System.out.println("Another line item? (y/n)");
 		k.nextLine();
@@ -115,7 +110,7 @@ ArrayList<Wine> winelist = new ArrayList<Wine>();
 	System.out.println("Description\t\t\tPrice\t\tQty\t\tTotal");
 	
 	System.out.println();
-	System.out.format("Invoice total:  $" + invoice.getFormattedTotal());
+	System.out.format("Invoice total:  $" + total );
 	}//psmv
 
 
