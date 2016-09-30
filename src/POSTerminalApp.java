@@ -21,6 +21,9 @@ public class POSTerminalApp {
 		
 		//welcome and prompts
 		System.out.println("Welcome to our Wine Shop!");
+		Invoice invoice = new Invoice();
+		getLineItems(invoice;)
+		displayInvoice(invoice);
 		System.out.println();
 		
 		System.out.println("Press 1 to view entire inventory or 2 to view by category");
@@ -58,6 +61,9 @@ public class POSTerminalApp {
 		System.out.println("Enter quantity:  ");
 		int quantity = k.nextInt();
 		
+		Product product = wine[].getProduct(product code);
+		invoice.addItem(new LineItem(product, quantity));
+		
 		System.out.println("Another line item? (y/n)");
 		k.nextLine();
 		choice = k.nextLine();
@@ -66,7 +72,7 @@ public class POSTerminalApp {
 	System.out.println("Description\t\t\tPrice\t\tQty\t\tTotal");
 	
 	System.out.println();
-	System.out.format("Invoice total:  $" + total);
+	System.out.format("Invoice total:  $" + invoice.getFormattedTotal());
 	}//psmv
 
 }//end class
