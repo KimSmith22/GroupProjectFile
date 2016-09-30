@@ -29,18 +29,18 @@ public class POSTerminalApp {
 
 ArrayList<Wine> winelist = new ArrayList<Wine>();
 	
-	winelist.add(new Wine("Villa Alena\t\t\t", "Moscato\t\t\t", 6.99));
-	winelist.add(new Wine("Beviano\t\t\t", "Moscato\t\t\t", 9.99));
-	winelist.add(new Wine("Flip Flop\t\t\t",  "Moscato\t\t\t", 10.00));
-	winelist.add(new Wine("Columbia Valley\t", "Merlot\t\t\t\t", 12.00));
-	winelist.add(new Wine("North Coast\t\t", "Merlot\t\t\t\t", 18.00));
-	winelist.add(new Wine("Mark West\t\t", "Pinot Noir", 11.00));
-	winelist.add(new Wine("DeLoach\t\t\t", "Pinot Noir", 8.99));
-	winelist.add(new Wine("Castle Rock\t\t", "Pinot Noir", 12.99));
-	winelist.add(new Wine("Murphy’s Law\t\t", "Riesling", 11.99));
-	winelist.add(new Wine("Washington Hills\t", "Riesling", 7.99));
-	winelist.add(new Wine("Standing Stone\t", "Riesling", 6.99));
-	winelist.add(new Wine("Bex\t\t\t\t", "Riesling", 5.99));
+	winelist.add(new Wine("Villa Alena\t\t\t", "Moscato\t\t\t$ ", 6.99));
+	winelist.add(new Wine("Beviano\t\t\t", "Moscato\t\t\t$ ", 9.99));
+	winelist.add(new Wine("Flip Flop\t\t\t",  "Moscato\t\t\t$ ", 9.99));
+	winelist.add(new Wine("Columbia Valley\t", "Merlot\t\t\t\t$", 11.99));
+	winelist.add(new Wine("North Coast\t\t", "Merlot\t\t\t\t$", 17.99));
+	winelist.add(new Wine("Mark West\t\t", "Pinot Noir\t\t\t$", 10.99));
+	winelist.add(new Wine("DeLoach\t\t\t", "Pinot Noir\t\t\t$", 8.99));
+	winelist.add(new Wine("Castle Rock\t\t", "Pinot Noir\t\t\t$", 12.99));
+	winelist.add(new Wine("Murphy’s Law\t\t", "Riesling\t\t\t$", 11.99));
+	winelist.add(new Wine("Washington Hills\t", "Riesling\t\t\t$", 7.99));
+	winelist.add(new Wine("Standing Stone\t", "Riesling\t\t\t$", 6.99));
+	winelist.add(new Wine("Bex\t\t\t\t", "Riesling\t\t\t$", 5.99));
 			
 				/*	
 				List<Double> Price= new ArrayList<Double>();
