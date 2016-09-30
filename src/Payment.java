@@ -6,16 +6,17 @@ import java.util.Scanner;
 
 public class Payment {
 
-	private double salesTax = 6.00;
+	private double salesTax = .0600;
 	private double grandTotal;
+	private double price;
 	
 	
 	double finalFinalTotal = 0;
 	Scanner scan = new Scanner(System.in);
 
 	public void getCash(double subTotal, Scanner scan) {
-		setSubTotal(subTotal);
-		double getGrandTotal = subTotal * salesTax;
+		setSubTotal(price);
+		double getGrandTotal = subTotal + salesTax;
 		boolean rightAmount = true;
 		do {
 			System.out.println("Enter cash value");
@@ -34,9 +35,9 @@ public class Payment {
 
 	}
 
-	public void getCheck(double subTotal, Scanner scan) {
-		setSubTotal(grandTotal);
 
+	public void getCheck(double subTotal, Scanner scan) {
+		getSubTotal(grandTotal);
 		boolean rightAmount = true;
 		do {
 			System.out.println("Enter check number");
@@ -59,14 +60,14 @@ public class Payment {
 		while (validCC == false) {
 			System.out.println(prompt);
 			String ccNumber = sc.next();
-			if (ccNumber.length() < 16 || ccNumber.length() > 16) {
+			if (ccNumber.length() < 15 || ccNumber.length() > 16) {
 				System.out.println("Insufficient digits. Please make sure you enter the entire number");
 				continue;
 			} else {
 				System.out.println("The card number you entered is " + ccNumber);
 				validCC = true;
 			}
-			System.out.println("Please enter date of expiration (mm/dd/yyyy) ");
+			System.out.println("Please enter date of expiration (mm/yyyy) ");
 			
 			boolean validDate = false;
 			while (validDate == false) {
