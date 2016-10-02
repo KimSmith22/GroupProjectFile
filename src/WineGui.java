@@ -1,54 +1,38 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.util.Scanner;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
+public class WineGui extends JFrame {
 
-public class WineGui extends JFrame implements ActionListener {
-
+	//creating the jframe
+	JTable jt;
+	String[] column_Headers={"Product Names","Product Type","Prices"};
+	String[][] product_Info={ {"Villa Alena", "Moscato","6.99"},
+            {"Beviano", "Moscato","9.99" },
+            {"Flip Flop",  "Moscato","9.99"},
+            {"Columbia Valley", "Merlot","11.99"},
+            {"North Coast", "Merlot","17.99"},
+            {"Mark West", "Pinot Noir","10.99"},
+            {"DeLoach", "Pinot Noir","8.99"},
+            {"Castle Rock", "Pinot Noir","12.99"},
+            {"Murphy’s Law", "Riesling","11.99"},
+            {"Washington Hills", "Riesling","7.99"},
+            {"Standing Stone", "Riesling","6.99"},
+            {"Bex", "Riesling","5.99"}};
 	
-	private JButton Pinot_Noir, Merlot , Reisling, Moscato;
-	
-	public static void main(String[] args) {
-	WineGui gui = new WineGui();
-	JTable winegui = new JTable();
-	
-		gui.setVisible(true);	// making the gui program visible
+			public WineGui() {
+			}
+			{
+				jt = new JTable(product_Info,column_Headers);
+				jt.setBounds(50,50,200,230);
+				JScrollPane js = new JScrollPane(jt);
+				this.add(js);//add jscroll to the table
+				this.setSize(500,400);
+				this.setVisible(true);
+			}
+	public static void main(String[]args) {
+		
+new WineGui();// instance of the class
+	}
 
-		
-	}//end of main method
-    
-    
-	public WineGui() {
-		
-		setTitle("The Wine Shop");
-		setSize(400, 400);
-		setVisible(true);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		// Add GUI components to let the user pick what type of wine they want.
-		Pinot_Noir = new JButton("Pinot Noir");
-		Merlot = new JButton("Merlot");
-		Reisling = new JButton("Reisling");
-		Moscato = new JButton("Moscato");
-		
-		Pinot_Noir.addActionListener(this);
-		Merlot.addActionListener(this);
-		Reisling.addActionListener(this);
-		Moscato.addActionListener(this);
-
-		Box buttons = Box.createHorizontalBox();
-		buttons.add(Pinot_Noir);
-		buttons.add(Merlot);
-		buttons.add(Reisling);
-		buttons.add(Moscato);
-		this.getContentPane().add(buttons, BorderLayout.CENTER);
-		
-		//JTable table = new JTable(winelist, receipt);
-		
-    }//end of constructor
-    
-    public void actionPerformed(ActionEvent e) {
-     
-    }//end of actionPerformed method
-    
 }
