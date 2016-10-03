@@ -1,11 +1,7 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
-
-
-/**
- * 
- */
 
 /**
  * @author Kimberli
@@ -28,11 +24,9 @@ public class POSTerminalApp {
 		 double grandTotal;
 		int quantity;
 		String name;
+		double tax = price * .06;
+		String tender;
 		
-		
-		
-		//welcome and prompts
-
 ArrayList<Wine> winelist = new ArrayList<Wine>();
 	
 	winelist.add(new Wine("Villa Alena\t\t\t", "Moscato\t\t\t$ ", 6.99));
@@ -51,36 +45,23 @@ ArrayList<Wine> winelist = new ArrayList<Wine>();
 
 		System.out.println("Welcome to our Wine Shop!");
 		System.out.println();
-
-		System.out.println("Press 1 to view entire inventory or 2 to view by category");
+		Order o = new Order();
+	do{
+		System.out.println("Press 1 to view our inventory:  ");
 		Scanner k = new Scanner(System.in);
 		int view = k.nextInt();
-		
+		if(view <1 || view > 1){//validation
+			System.out.println("Please enter 1 to view our inventory:");
+			view = k.nextInt();
+		}//end validation
+	
 		switch(view){//view inventory switch
 
 		case 1:
 			System.out.printf("Wine Name\t\t\t Type \t\t\t Price\n");
-	for (Wine x: winelist) {				
-						System.out.println(x);
-	}
-			break;
-		case 2:
-			System.out.println("Select:\n1 for Pinot Noir\n2 for Merlot\n3 for Reisling\n4 for Moscato");
-			int type = k.nextInt();
-				switch(type){
-				case 1:
-					System.out.println("pinot noir list");
-					break;
-				case 2:
-					System.out.println("merlot list");
-					break;
-				case 3:
-					System.out.println("reisling list");
-					break;
-				case 4:
-					System.out.println("moscato list");
-					break;					
-			}//end type switch
+	for (Wine x: winelist) {	//print inventory			
+						System.out.println(x);	
+			}		//end inventory print
 		}//end view switch	
 	do{
 		k.nextLine();
@@ -88,8 +69,7 @@ ArrayList<Wine> winelist = new ArrayList<Wine>();
 		System.out.println("Enter wine name:  ");
 	    name = k.nextLine();
 		
-		System.out.println("Enter quantity:  ");
-		 quantity = k.nextInt();
+		
 		
 		if(name.equalsIgnoreCase("villa alena")){
 			price = 6.99;
@@ -129,27 +109,35 @@ ArrayList<Wine> winelist = new ArrayList<Wine>();
 			description = "Reisling";
 		}
 		
+		System.out.println("Enter quantity:  ");
+		 quantity = k.nextInt();
 		 total +=price * quantity;
 		grandTotal = total + (total * .06);
-		
+			
+		k.nextLine();
 		System.out.println("Another line item? (y/n)");
 		choice = k.nextLine();
+		if(choice.equalsIgnoreCase("y")){
+		System.out.println("Press 'enter'");
+		}
 	}while(choice.equalsIgnoreCase("y"));
 	
 	//NumberFormatCurrency = NumberFormat.getFormattedCurrency();
-	
+
 	String message = "\nLINE ITEM\n"+
 	"Wine:  " + name + "\n" +
 	"Description:  " + description + "\n" +
 	"Price:  " + (price) + "\n" +
 	"Quantity:  " + quantity + "\n" +
 	"Total:  " + (total) + "\n";
+
 	
 	System.out.println(message);
+	
 	System.out.println();
-	System.out.println("Sub-total:  $" + total );
-	System.out.println("Sales tax:  $" + total * .06);
-	System.out.println("Order total:  $" + grandTotal);
+	System.out.println("Sub-total:  $" + (price));
+	System.out.println("Sales tax:  $" + (price * .06));
+	System.out.println("Order total:  $" + (price + (price * .06)));
 	
 	System.out.println("Select Payment Method:  1 for cash, 2 for check, or 3 for charge");
 	int payment = k.nextInt();
@@ -167,6 +155,7 @@ ArrayList<Wine> winelist = new ArrayList<Wine>();
 	case 3:
 		System.out.println("Enter credit card number:  ");
 		long card = k.nextLong();
+		
 		System.out.println("Enter expiration date (mm/yyyy)");
 		k.nextLine();
 		String date = k.nextLine();
@@ -175,7 +164,26 @@ ArrayList<Wine> winelist = new ArrayList<Wine>();
 		break;
 	}//end payment switch
 	
+	String message2 = "\nRECIEPT\n"+
+			"Wine:  " + name + "\n" +
+			"Description:  " + description + "\n" +
+			"Price:  " + (price) + "\n" +
+			"Quantity:  " + quantity + "\n" +
+			"Total:  " + (grandTotal) + "\n";
+		
+			System.out.println(message2);
+			
+	System.out.println("Would you like to continue shopping? y/n");
+	k.nextLine();
+	choice = k.nextLine();
+	}while(choice.equalsIgnoreCase("y"));
+	if(choice != "n"){
+		/* System.out.println ("Cart Total : "+Order.getCartPrice());   
+			final Iterator<ProductManager> it = Order.getCartDetails().iterator();
+			while(it.hasNext()){		
+				System.out.println (it.next());*/
+	}
 	}//psmv
 
-
+	
 }// end class
